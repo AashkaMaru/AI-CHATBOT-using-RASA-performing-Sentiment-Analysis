@@ -1,0 +1,282 @@
+version: "2.0"
+
+stories:
+- story: hello world path
+  steps:
+    - intent: hello_world
+    - action: action_hello_world
+
+- story: say goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: happy path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: say inquire
+  steps:
+  - intent: inquire
+  - action: utter_info
+  - action: utter_policy
+  - intent: appreciate
+  - action: utter_thanks
+
+- story: math facts
+  steps:
+  - intent: math_facts
+  - action: get_math_fact
+  - action: get_math_fact
+
+- story: day facts
+  steps:
+  - intent: day_facts
+  - action: get_date_fact
+  - action: get_date_fact
+
+- story: get jokes
+  steps:
+  - intent: jokes
+  - action: get_joke
+  - action: get_joke
+
+- story: mental health path
+  steps:
+  - intent: mental_health_intro
+  - action: utter_mh_intro
+
+- story: mental illness path
+  steps:
+  - intent: mental_illness_intro
+  - action: utter_mi_intro
+
+- story: mhi difference path
+  steps:
+  - intent: mental_health_illness_difference
+  - action: utter_mhi_difference
+
+- story: early signs path
+  steps:
+  - intent: early_signs
+  - action: utter_early_signs
+  - action: utter_consult_doctor
+  - action: utter_console
+
+- story: path about time
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: give_time
+    - action: action_show_time
+
+- story: faq astronomy
+  steps:
+    - intent: faq_astronomy
+    - action: action_faq_astronomy
+
+- story: faq space
+  steps:
+    - intent: faq_space
+    - action: action_faq_space
+    - intent: greet
+    - action: utter_greet
+    - intent: deny
+    - action: utter_goodbye
+
+- story: faq telescopes
+  steps:
+    - intent: faq_telescopes
+    - action: action_faq_telescopes
+
+- story: faq planets
+  steps:
+    - intent: faq_planets
+    - action: action_faq_planets
+    - intent: greet
+    - action: utter_greet
+    - intent: deny
+    - action: utter_goodbye
+
+- story: faq mission at isro
+  steps:
+    - intent: faq_mission_at_isro
+    - action: action_faq_mission_at_isro
+    - intent: greet
+    - action: utter_greet
+    - intent: deny
+    - action: utter_goodbye
+
+- story: faq mission at nasa
+  steps:
+    - intent: faq_mission_at_nasa
+    - action: action_faq_mission_at_nasa
+    - intent: greet
+    - action: utter_greet
+    - intent: deny
+    - action: utter_goodbye
+
+- story: faq black hole
+  steps:
+    - intent: faq_black_hole
+    - action: action_faq_black_hole
+    - intent: greet
+    - action: utter_greet
+    - intent: deny
+    - action: utter_goodbye
+
+- story: faq star and galaxies
+  steps:
+    - intent: faq_star_and_galaxies
+    - action: action_faq_star_and_galaxies
+    - intent: greet
+    - action: utter_greet
+    - intent: deny
+    - action: utter_goodbye
+
+- story: what is corona
+  steps:
+    - intent: corona_intro
+    - action: utter_corona_intro
+
+- story: Social Distancing
+  steps:
+  - intent: corona_distance
+  - action: utter_corona_distance
+
+- story: Prevention
+  steps:
+  - intent: prevent_corona
+  - action: utter_prevent_corona
+
+- story: medicines
+  steps:
+  - intent: medicines
+  - action: utter_medicines
+
+- story: what are its symptoms
+  steps:
+  - intent: corona_symptoms
+  - action: utter_corona_symptoms
+
+- story: how does corona spread
+  steps:
+  - intent: corona_spread
+  - action: utter_corona_spread
+
+- story: corona food spread
+  steps:
+  - intent: corona_food_spread
+  - action: utter_corona_food_spread
+
+- story: corona warm weather
+  steps:
+  - intent: warm_weather
+  - action: utter_warm_weather
+
+- story: corona high risk
+  steps:
+  - intent: high_risk
+  - action: utter_high_risk
+
+- story: detect_corona affirm
+  steps:
+  - intent: detect_corona
+  - action: utter_detect_corona
+  - intent: affirm
+  - action: utter_covid_test_started
+
+- story: detect_corona affirm
+  steps:
+  - intent: detect_corona
+  - action: utter_detect_corona
+  - intent: deny
+  - action: utter_what_i_can_help_u_with
+  - intent: help
+  - action: utter_help
+
+- story: corona tracker path
+  steps:
+  - intent: corona_state
+  - action: action_corona_tracker
+
+- story: beginner path affirm
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: corona_intro
+  - action: utter_corona_intro
+  - intent: corona_spread
+  - action: utter_corona_spread
+  - intent: corona_symptoms
+  - action: utter_corona_symptoms
+  - intent: prevent_corona
+  - action: utter_prevent_corona
+  - intent: detect_corona
+  - action: utter_detect_corona
+  - intent: affirm
+  - action: utter_covid_test_started
+
+- story: beginner path deny
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: corona_intro
+  - action: utter_corona_intro
+  - intent: corona_spread
+  - action: utter_corona_spread
+  - intent: corona_symptoms
+  - action: utter_corona_symptoms
+  - intent: prevent_corona
+  - action: utter_prevent_corona
+  - intent: detect_corona
+  - action: utter_detect_corona
+  - intent: deny
+  - action: utter_what_i_can_help_u_with
+  - intent: help
+  - action: utter_help
+
+- story: happy play video path
+  steps:
+    - intent: play_video
+    - action: action_video
+
+- story: happy send_email path
+  steps:
+    - intent: send_email
+    - action: action_submit_mail
+
+- story: happy send_sms path
+  steps:
+    - intent: send_sms
+    - action: action_submit_sms

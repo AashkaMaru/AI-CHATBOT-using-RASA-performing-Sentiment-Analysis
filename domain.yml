@@ -1,0 +1,341 @@
+version: "2.0"
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+intents:
+  - hello_world
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - thank
+  - mood_great
+  - mood_unhappy
+  - mood_anger
+  - mood_anxiety
+  - mood_fear
+  - mood_depression
+  - mood_disgust
+  - road_accident
+  - sexual_assault
+  - self_harm
+  - threat
+  - inquire
+  - wrongreply
+  - bot_challenge
+  - user_bored
+  - mental_health_intro
+  - mental_illness_intro
+  - mental_health_illness_difference
+  - early_signs
+  - math_facts
+  - jokes
+  - day_facts
+  - advice
+  - user_waiting
+  - smart
+  - funny
+  - good
+  - talk
+  - bad
+  - no_problem
+  - wow
+  - dont_care
+  - what_you_mean
+  - user_joking
+  - help
+  - give_time
+  - faq_astronomy
+  - faq_space
+  - faq_telescopes
+  - faq_planets
+  - faq_mission_at_isro
+  - faq_mission_at_nasa
+  - faq_black_hole
+  - faq_star_and_galaxies
+  - corona_intro
+  - corona_symptoms
+  - corona_spread
+  - corona_food_spread
+  - warm_weather
+  - high_risk
+  - corona_distance
+  - prevent_corona
+  - medicines
+  - detect_corona
+  - corona_state
+  - play_video
+  - send_email
+  - send_sms
+
+actions:
+  - action_hello_world
+  - get_joke
+  - get_date_fact
+  - get_math_fact
+  - action_show_time
+  - action_faq_astronomy
+  - action_faq_space
+  - action_faq_telescopes
+  - action_faq_planets
+  - action_faq_mission_at_isro
+  - action_faq_mission_at_nasa
+  - action_faq_black_hole
+  - action_faq_star_and_galaxies
+  - utter_help
+  - utter_corona_intro
+  - utter_corona_spread
+  - utter_corona_food_spread
+  - utter_warm_weather
+  - utter_high_risk
+  - utter_thanks
+  - utter_prevent_corona
+  - utter_corona_distance
+  - utter_medicines
+  - utter_detect_corona
+  - utter_covid_test_started
+  - utter_what_i_can_help_u_with
+  - action_corona_tracker
+  - action_submit_sms
+  - action_submit_mail
+  - action_video
+
+entities:
+  - state
+  - infection
+
+slots:
+  mobile_number:
+    type: text
+  message:
+    type: text
+  email:
+   type: text
+  subject:
+    type: text
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+  - text: "Hello. How are you?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+  - text: "Sad to hear that. Don't let that get you down though."
+  - text: "Oh well, all storms clear out eventually... just hang in there!"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+  - text: "That's nice to hear. Wanna tell me about your day?"
+
+  utter_pitch_trivia:
+    - buttons:
+      - payload: "I'd like that"
+        title: "Yeah, sure."
+      - payload: "I don't think so"
+        title: "Not really."
+      text: "Wanna hear a joke or learn something new?"
+
+  utter_trivia_options:
+    - buttons:
+      - payload: "Today in history"
+        title: "Today in history"
+      - payload: "humorous jokes"
+        title: "Fetch a joke"
+      text: "Great! So which will it be?"
+
+  utter_ask_add_more:
+    - buttons:
+      - payload: "Today in history"
+        title: "Date facts"
+      - payload: "humorous jokes"
+        title: "Jokes"
+      text: "What next ...?"
+
+  utter_maybe_next_time:
+  - text: "Oh well, maybe next time. Bye."
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_info:
+  - text: "Hi I'm Stark, an assistant designed to be there when in need :)"
+
+  utter_policy:
+  - text: "Everything you say will be our secret ;)"
+
+  utter_thanks:
+  - text: "Thank you! Would you like to talk about anything else?"
+
+  utter_question:
+  - text: "What's bothering you?"
+  - text: "What's on your mind?"
+  - text: "Would you like to tell me what happened?"
+
+  utter_angry:
+  - text: "Calm down and tell me more about it"
+
+  utter_nf:
+  - text: "Is everything alright?"
+
+  utter_inqu:
+  - text: "Did anyone get hurt?"
+
+  utter_inqu2:
+  - text: "Are they still alive?"
+
+  utter_accident:
+  - text: "Be more careful next time. My advice to you is that when driving. keep in mind that everyone except you is blind, so take care of yourself :)"
+
+  utter_confirm:
+  - text: "Ok."
+
+  utter_error:
+  - text: "I'm sorry I could not understand what you said, properly. You can try asking me something else or rephrasing your question."
+
+  utter_default:
+  - text: "I could not understand. Please rephrase."
+  - text: "Tell me more"
+
+  utter_mh_intro:
+    - text: "Mental health is all about how we think, feel, and behave. It includes a person's ability to enjoy life to attain a balance between life activities and efforts to achieve psychological resilience."
+    - text: 'Mental health, defined by the World Health Organization (WHO), is "a state of well-being in which the individual realizes his or her own abilities, can cope with the normal stresses of life, can work productively and fruitfully, and is able to make a contribution to his or her community".'
+
+  utter_mi_intro:
+    - text: "A mental illness is called a mental disorder or psychiatric disorder. It is a behavioral or mental pattern, that causes significant distress or impairment of personal functioning."
+    - text: 'Mental illnesses are health conditions involving changes in emotion, thinking or behavior (or a combination of these). Mental illnesses are associated with distress and/or problems functioning in social, work or family activities.'
+
+  utter_mhi_difference:
+    - text: "Mental Health and Mental Illness are different. Mental Health refers to your mental and emotional well-beings, while Mental illness is when someone has been diagnosed with a mental health problem."
+
+  utter_early_signs:
+    - text: "Our body has a built-in warning systems, which alert us to the important signs. \n\nThese are the five warning signs of mental illness: \n1.Long-lasting sadness or irritability \n2.Extremely high and low mood \n3.Excessive fear, worry, or anxiety \n4.Social withdrawal \n5.Dramatic changes in eating or sleeping habits"
+
+  utter_consult_doctor:
+    - text: "If you are feeling very low, then you might consult a professional for help."
+
+  utter_console:
+    - text: "However, you can tell me more. I am listening"
+
+  utter_help:
+  - text: "I can answer to questions related to what is corona, its symptoms, preventive measures, its spreading in warm weather or in general, who are at high risk,<br><br>click on above ? button to get more info
+      <br><br><b> I can also check whether u are suffering from corona or not (type -> corona test)</b>"
+
+  utter_medicines:
+  - text: "No pharmaceutical products have yet been shown to be safe and effective for the treatment of COVID-19."
+
+  utter_corona_intro:
+  - text: "Coronaviruses are a group of related viruses that cause diseases in mammals
+      and birds. In humans, coronaviruses cause respiratory tract infections that
+      can be mild, such as some cases of the common cold (among other possible causes,
+      predominantly rhinoviruses), and others that can be lethal, such as SARS, MERS,
+      and COVID-19"
+
+  utter_corona_distance:
+  - text: "Maintain at least 1 metre (3 feet) distance between yourself and others.
+      Why? When someone coughs, sneezes, or speaks they spray small liquid droplets
+      from their nose or mouth which may contain virus. If you are too close, you
+      can breathe in the droplets, including the COVID-19 virus if the person has
+      the disease"
+
+  utter_corona_symptoms:
+  - text: "The most common symptoms are <br><br><b>Fever</b></br><b>Dry cough</b></br><b>Tiredness</b><br><br>
+      And Serious Symptoms are <br> <br><b>Difficulty Breathing</b></br><b>Chest Pain</b></br><b>Loss
+      of speech or movement</b>"
+
+  utter_prevent_corona:
+  - text: "Standard recommendations to prevent the spread of COVID-19 include frequent
+      cleaning of hands using alcohol-based hand rub or soap and water; covering the
+      nose and mouth with a flexed elbow or disposable tissue when coughing and sneezing;
+      and avoiding close contact with anyone that has a fever and cough."
+
+  utter_corona_spread:
+  - text: "This virus was first detected in Wuhan City, Hubei Province, China. The
+      first infections were linked to a live animal market, but the virus is now spreading
+      from person-to-person. It’s important to note that person-to-person spread can
+      happen on a continuum. Some viruses are highly contagious (like measles), while
+      other viruses are less so. The virus that causes COVID-19 is spreading from
+      person-to-person. Someone who is actively sick with COVID-19 can spread the
+      illness to others. That is why we recommend that these patients be isolated
+      either in the hospital or at home (depending on how sick they are) until they
+      are better and no longer pose a risk of infecting others.n How long someone
+      is actively sick can vary so the decision on when to release someone from isolation
+      is made on a case-by-case basis in consultation with doctors, infection prevention
+      and control experts, and public health officials and involves considering specifics
+      of each situation including disease severity, illness signs and symptoms, and
+      results of laboratory testing for that patient.n The virus that causes COVID-19
+      seems to be spreading easily and sustainably in the community (“community spread”)
+      in some affected geographic areas. Community spread means people have been infected
+      with the virus in an area, including some who are not sure how or where they
+      became infected."
+
+  utter_detect_corona:
+  - text: "Do you want to take covid test ?"
+
+  utter_covid_test_started:
+  - text: "Covid Test Started."
+
+  utter_what_i_can_help_u_with:
+  - text: "What i can help you with ?<br><br> you can type help to see what all i can do"
+
+  utter_corona_food_spread:
+  - text: "Coronaviruses are generally thought to be spread from person-to-person through
+      respiratory droplets. Currently there is no evidence to support transmission
+      of COVID-19 associated with food. Before preparing or eating food it is important
+      to always wash your hands with soap and water for 20 seconds for general food
+      safety. Throughout the day wash your hands after blowing your nose, coughing
+      or sneezing, or going to the bathroom."
+
+  utter_warm_weather:
+  - text: "It is not yet known whether weather and temperature impact the spread of
+      COVID-19. Some other viruses, like the common cold and flu, spread more during
+      cold weather months but that does not mean it is impossible to become sick with
+      these viruses during other months.  At this time, it is not known whether the
+      spread of COVID-19 will decrease when weather becomes warmer.  There is much
+      more to learn about the transmissibility, severity, and other features associated
+      with COVID-19 and investigations are ongoing."
+
+  utter_high_risk:
+  - text: "Older adults and people of any age who have serious underlying medical conditions
+      may be at higher risk for more serious complications from COVID-19. These people
+      who may be at higher risk of getting very sick from this illness, includes;
+      Older adults, People who have serious underlying medical conditions like...
+      Heart disease, Diabetes, Lung disease."
+
+  utter_ask_email:
+    - text: "Please provide the email ID whom You want to send the email."
+
+  utter_ask_subject:
+    - text: "Please provide the Subject for you email."
+
+  utter_ask_message:
+    - text: "Please provide the message for your email."
+
+  utter_ask_mobile_number:
+    - text: "Please provide the mobile number whom you want to send message?"
+
+  utter_ask_messageP:
+    - text: "Please provide the message you want to send?"
+
+forms:
+  email_form:
+    email:
+    - type: from_text
+    subject:
+    - type: from_text
+    message:
+    - type: from_text
+
+  sms_details_form:
+    mobile_number:
+      - type: from_text
+    message:
+      - type: from_text
